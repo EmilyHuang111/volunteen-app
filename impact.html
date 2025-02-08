@@ -1,0 +1,116 @@
+<!-- IMPACT CALCULATOR SECTION -->
+<div id="impactSection" class="content-section hidden" style="color:#fff;">
+  <!-- Section Title for the Impact Calculator -->
+  <h1>Impact Calculator</h1>
+  <p>Calculate your volunteer impact below:</p>
+
+  <!-- Impact Calculator Input Form -->
+  <div class="impact-calculator-container" style="margin-top:20px;">
+      <form id="calculateImpactForm">
+          <!-- Label and input field for entering volunteer hours -->
+          <label for="impactHoursInput"><strong>Enter Volunteer Hours:</strong></label><br/>
+          <input 
+            type="number" 
+            step="0.1" 
+            id="impactHoursInput" 
+            placeholder="Enter hours worked" 
+            required 
+            style="
+              padding:10px;
+              width: 200px;
+              border-radius:5px;
+              border: none;
+              margin-right:10px;
+              margin-bottom:10px;
+            "
+          />
+          <!-- Submit button to calculate impact, calls the calculateImpact function -->
+          <button type="submit" class="submit" 
+            onclick="calculateImpact(parseFloat(document.getElementById('impactHoursInput').value)); return false;">
+            Calculate Impact
+          </button>
+      </form>
+  </div>
+
+  <!-- Impact Results Section -->
+  <div id="impactResultsSection" class="impact-results-container" style="margin-top:30px;">
+      <!-- Section for displaying the impact results -->
+      <div id="impactResults"></div>
+      
+      <!-- New Graph Canvas to display impact data as a chart -->
+      <canvas 
+        id="impactChart" 
+        style="max-width:600px; height:400px; margin: 20px auto;"
+      ></canvas>
+  </div>
+
+  <!-- Impact Information Grid -->
+  <div 
+    class="impact-info-grid" 
+    style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px;"
+  >
+      <!-- Impact Box for Meals Prepared -->
+      <div 
+        class="impact-box" 
+        style="
+          background: rgba(255, 255, 255, 0.1); 
+          padding: 20px; 
+          border-radius: 10px; 
+          text-align: center;"
+      >
+          <!-- Icon for Meals Prepared -->
+          <span style="font-size: 100px;">🍽️</span>
+          <h4>Meals Prepared</h4>
+          <!-- Description of impact related to meals prepared -->
+          <p>Feeding meals ensures that those in need receive nutritious food.</p>
+      </div>
+
+      <!-- Impact Box for Trash Collected -->
+      <div 
+        class="impact-box" 
+        style="
+          background: rgba(255, 255, 255, 0.1); 
+          padding: 20px; 
+          border-radius: 10px; 
+          text-align: center;"
+      >
+          <!-- Icon for Trash Collected -->
+          <span style="font-size: 100px;">🗑️</span>
+          <h4>Trash Collected</h4>
+          <!-- Description of impact related to trash collection -->
+          <p>Keep your environment clean, protecting wildlife and reducing pollution.</p>
+      </div>
+
+      <!-- Impact Box for Students Taught -->
+      <div 
+        class="impact-box" 
+        style="
+          background: rgba(255, 255, 255, 0.1); 
+          padding: 20px; 
+          border-radius: 10px; 
+          text-align: center;"
+      >
+          <!-- Icon for Students Taught -->
+          <span style="font-size: 100px;">🎓</span>
+          <h4>Students Taught</h4>
+          <!-- Description of impact related to students taught -->
+          <p>Teaching empowers children with knowledge and fosters growth.</p>
+      </div>
+
+      <!-- Impact Box for Trees Planted -->
+      <div 
+        class="impact-box" 
+        style="
+          background: rgba(255, 255, 255, 0.1); 
+          padding: 20px; 
+          border-radius: 10px; 
+          text-align: center;"
+      >
+          <!-- Icon for Trees Planted -->
+          <span style="font-size: 100px;">🌳</span>
+          <h4>Trees Planted</h4>
+          <!-- Description of impact related to trees planted -->
+          <p>Planted trees improve air quality and combat climate change.</p>
+      </div>
+  </div>
+</div>

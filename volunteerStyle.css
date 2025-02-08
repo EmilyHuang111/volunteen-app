@@ -1,0 +1,360 @@
+
+/* VOLUNTEER OPPORTUNITY BOXES */
+.volunteer-opportunity-box {
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: 0.2s ease;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .volunteer-opportunity-box:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+  }
+  .volunteer-opportunity-box h3 {
+    margin-bottom: 10px;
+  }
+  .volunteer-opportunity-box button.view-details-btn {
+    margin-top: 10px;
+  }
+  .volunteer-opportunity-box button {
+    width: 100%;
+    max-width: 150px;
+  }
+  .join-event-btn {
+    margin-top: 10px;
+    background: rgba(255,255,255,0.8);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #000;
+    transition: 0.3s;
+  }
+  .join-event-btn:hover {
+    background: rgba(255,255,255,0.5);
+  }
+  
+  /* MAP BUTTONS */
+  .view-on-map-btn,
+  .back-to-list-btn {
+    margin-bottom: 10px;
+    background: #007bff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-right: 10px;
+  }
+  .view-on-map-btn:hover,
+  .back-to-list-btn:hover {
+    background: #0056b3;
+  }
+  
+  /* ORGANIZE FORM */
+  .org-input {
+    width: 100%;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    color: #000;
+    background: rgba(255,255,255,0.2);
+  }
+  .org-input:hover,
+  .org-input:focus {
+    background: rgba(255,255,255,0.25);
+  }
+  
+  /* MODAL */
+  .modal {
+    position: fixed;
+    z-index: 999;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.8);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+  }
+  .modal.hidden {
+    display: none !important;
+  }
+  .modal-content {
+    position: relative;
+    color: #fff;
+    background: #222;  
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    padding: 0 8px;
+    line-height: 24px;
+    z-index: 1;
+  }
+  .close-btn:hover {
+    background: rgba(255,255,255,0.3);
+  }
+  
+  /* View Details Button */
+  .view-details-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px;
+  }
+  .view-details-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  /* Check In Button */
+  .check-in-btn {
+    background: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px;
+  }
+  .check-in-btn:hover {
+    background: #6c757d;
+    transform: translateY(-2px);
+  }
+  
+  .check-in-btn.checked-in {
+    background-color: #28a745; /* green background */
+    color: #fff;
+    cursor: default;
+  }
+  
+  
+  /* Already Joined Badge */
+  .already-joined-badge {
+    display: block;
+    background: #28a745;
+    color: #fff;
+    border-radius: 12px;
+    padding: 6px 12px;
+    font-size: 14px;
+    width: fit-content;
+    margin: 10px auto;
+  }
+  .join-event-btn.disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  /* MY PLANS */
+  .my-plan-event-box {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+  }
+  .my-plan-event-box h3 {
+    margin-bottom: 10px;
+  }
+  .my-plan-event-box p {
+    margin-bottom: 5px;
+  }
+  .view-participants-btn {
+    background: #17a2b8;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.3s;
+    margin-right: 10px;
+  }
+  .view-participants-btn:hover {
+    background: #138496;
+  }
+  .edit-event-btn {
+    background: #ffc107;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #000;
+    transition: background 0.3s;
+    margin-right: 10px;
+  }
+  .edit-event-btn:hover {
+    background: #e0a800;
+  }
+  .delete-event-btn {
+    background: #dc3545;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.3s;
+  }
+  .delete-event-btn:hover {
+    background: #c82333;
+  }
+  
+  .remove-from-dashboard-btn {
+    background: #dc3545;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.3s;
+  }
+  .remove-from-dashboard-btn:hover {
+    background: #c82333;
+  }
+  
+  .cancel-participation-btn {
+    background: #ff8c00; 
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.3s;
+    margin-top: 10px;
+  }
+  .cancel-participation-btn:hover {
+    background: #ff7518;
+  }
+  
+  /* Confirmation Modal */
+  .confirmation-modal .modal-content {
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+  }
+  .confirmation-modal h2 {
+    margin-bottom: 15px;
+  }
+  .confirmation-modal p {
+    margin-bottom: 8px;
+  }
+  .confirmation-modal button.confirm-btn {
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-right: 10px;
+  }
+  .confirmation-modal button.confirm-btn:hover {
+    background: #c82333;
+  }
+  .confirmation-modal button.cancel-btn {
+    background: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .confirmation-modal button.cancel-btn:hover {
+    background: #5a6268;
+  }
+  
+  /* Community Posts */
+  .community-post {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+  }
+  .community-post p {
+    white-space: pre-wrap;
+    color: #fff;
+  }
+  .community-post .like-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .community-post .like-btn:hover {
+    background: rgba(255,255,255,0.8);
+  }
+  .community-post .delete-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 120px;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Extra styling for delete confirm/cancel in the modal */
+  .delete-confirm-btn {
+    background: #dc3545; /* Red */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-right: 10px;
+  }
+  .delete-confirm-btn:hover {
+    background: #c82333;
+  }
+  .delete-cancel-btn {
+    background: #6c757d; /* Gray */
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .delete-cancel-btn:hover {
+    background: #5a6268;
+  }
+  

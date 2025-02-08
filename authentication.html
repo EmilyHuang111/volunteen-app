@@ -1,0 +1,194 @@
+    <!-- LOGIN FORM -->
+    <div class="form-box hidden" id="login">
+        <!-- Login Container: Holds the structure of the login form -->
+        <div class="login-container">
+          <!-- Top Section: Contains a sign-up link and the login header -->
+          <div class="top">
+            <!-- Sign-up prompt with link to registration form -->
+            <span style="color:#fff;">Don't have an account?
+              <a href="#" onclick="register()">Sign Up</a>
+            </span>
+            <!-- Login header -->
+            <header style="color:#fff;">Login</header>
+          </div>
+          <!-- Input Box for Username or Email -->
+          <div class="input-box" style="margin-bottom:25px;">
+            <input
+              type="text"
+              class="input-field"
+              placeholder="Username or Email"
+              id="loginEmail"
+              required
+            />
+            <i class="bx bx-user"></i>
+          </div>
+          <!-- Input Box for Password -->
+          <div class="input-box" style="margin-bottom:25px;">
+            <input
+              type="password"
+              class="input-field"
+              placeholder="Password"
+              id="loginPassword"
+              required
+            />
+            <!-- Icon representing password input -->
+            <i class="bx bx-lock-alt"></i>
+            <span class="toggle-pw" 
+                  onclick="togglePassword('loginPassword')" 
+                  style="
+                    position:absolute;
+                    right:15px;
+                    top:10px;
+                    color:#fff;
+                    cursor:pointer;
+                  "
+            >
+              <i class='bx bx-show'></i>
+            </span>
+          </div>
+          <!-- Input Box for Submit Button -->
+          <div class="input-box" style="margin-bottom:25px;">
+            <button type="submit" class="submit" id="signInBtn">Sign In</button>
+          </div>
+          <!-- Two-Column Section: Contains "Remember Me" checkbox and "Forgot password" link -->
+          <div class="two-col" style="color:#fff;">
+            <div class="one">
+              <!-- Remember Me Checkbox -->
+              <input type="checkbox" id="login-check" />
+              <label for="login-check">Remember Me</label>
+            </div>
+            <div class="two">
+              <label>
+                <a href="#" style="color:#fff;" onclick="showForgotPassword()">Forgot password?</a>
+              </label>
+            </div>
+          </div>
+          <!-- Google Sign-In Button -->
+          <div class="google-signin-container" style="margin-top:20px;">
+            <!-- Button that triggers Google Sign-In -->
+            <button class="google-btn" onclick="signInWithGoogle()">
+              <i class='bx bxl-google' style="margin-right:8px;"></i> Sign in with Google
+            </button>
+          </div>
+        </div>
+      </div>
+      
+     <!-- REGISTER FORM (hidden initially) -->
+        <div class="form-box hidden" id="register">
+            <div class="register-container">
+              <!-- Top Section: Contains prompt for existing users and the sign-up header -->
+              <div class="top">
+                <span style="color:#fff;">Have an account?
+                  <a href="#" onclick="login()">Login</a>
+                </span>
+                <header style="color:#fff;">Sign Up</header>
+              </div>
+                <!-- Input Fields for Firstname and Lastname -->
+              <div class="two-forms">
+                <div class="input-box">
+                  <!-- Firstname input field -->
+                  <input
+                    type="text"
+                    class="input-field"
+                    placeholder="Firstname"
+                    id="firstName"
+                    required
+                  />
+                  <i class="bx bx-user"></i>
+                </div>
+                <div class="input-box">
+                   <!-- Lastname input field -->
+                  <input
+                    type="text"
+                    class="input-field"
+                    placeholder="Lastname"
+                    id="lastName"
+                    required
+                  />
+                  <i class="bx bx-user"></i>
+                </div>
+              </div>
+              <!-- Email input field -->
+              <div class="input-box">
+                <input
+                  type="email"
+                  class="input-field"
+                  placeholder="Email"
+                  id="registerEmail"
+                  required
+                />
+                <i class="bx bx-envelope"></i>
+              </div>
+              <!-- Password input field with visibility toggle -->
+              <div class="input-box" style="margin-bottom:25px;">
+                <input
+                  type="password"
+                  class="input-field"
+                  placeholder="Password"
+                  id="registerPassword"
+                  required
+                />
+                  <!-- Icon for password field -->
+                <i class="bx bx-lock-alt"></i>
+                <span class="toggle-pw" 
+                      onclick="togglePassword('registerPassword')" 
+                      style="
+                        position:absolute;
+                        right:15px;
+                        top:10px;
+                        color:#fff;
+                        cursor:pointer;
+                      "
+                >
+                  <i class='bx bx-show'></i>
+                </span>
+              </div>
+                <!-- Register button -->
+              <div class="input-box" style="margin-bottom:25px;">
+                <button type="submit" class="submit" id="signUpBtn">Register</button>
+              </div>
+               <!-- Remember Me checkbox and Terms & Conditions link -->
+              <div class="two-col" style="color:#fff;">
+                <div class="one">
+                  <input type="checkbox" id="register-check" />
+                  <label for="register-check" style="color:#fff;">Remember Me</label>
+                </div>
+                <div class="two">
+                  <label><a href="#" style="color:#fff;">Terms & conditions</a></label>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <!-- FORGOT PASSWORD FORM -->
+          <div class="form-box hidden" id="forgotPasswordForm">
+             <!-- Forgot Password Form Container -->
+            <div class="login-container">
+              <div class="top">
+                <header style="color:#fff; margin-bottom:10px;">Reset Password</header>
+              </div>
+              <p style="color:#fff;">Enter your email to reset your password:</p>
+              <!-- Input Field for Email to reset password -->
+              <div class="input-box" style="margin-bottom:25px;">
+                <input
+                  type="email"
+                  class="input-field"
+                  placeholder="Your Email"
+                  id="forgotEmail"
+                  required
+                />
+                <i class="bx bx-envelope"></i>
+              </div>
+              <!-- Submit button to send the reset email -->
+              <div class="input-box" style="margin-bottom:25px;">
+                <button type="submit" class="submit" onclick="forgotPasswordSubmit()">
+                  Send Reset Email
+                </button>
+              </div>
+              <!-- Link back to the login page -->
+              <div style="color:#fff;">
+                <a href="#" style="color:#fff;" onclick="login()">Back to Login</a>
+              </div>
+            </div>
+          </div>
+      

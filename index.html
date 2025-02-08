@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volunteen</title>
+  <link rel="icon" type="image/png" href="images/volunteen-favicon.png" sizes="32x32" />
+
+  <!-- Boxicons for icons -->
+  <link
+    href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+  
+  <!-- Chart.js for charting capabilities -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Google API for Google Sign-In functionality -->
+  <script src="https://apis.google.com/js/api.js"></script>
+
+  <!-- Main CSS files for styling -->
+  <link rel="stylesheet" href="toolStyle.css" />
+  <link rel="stylesheet" href="volunteerStyle.css" />
+  <link rel="stylesheet" href="footerStyle.css" />
+  <link rel="stylesheet" href="communityStyle.css" />
+
+  <!-- Firebase SDK (compat version) for Firebase functionality -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
+
+  <!-- Marked.js for converting Markdown content to HTML -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@4.2.12/marked.min.js"></script>
+</head>
+<body>
+
+  <!-- Navbar Container (for dynamic navbar rendering) -->
+  <div id="navbarContainer"></div>
+
+  <!-- Main wrapper for the page content -->
+  <div class="wrapper">
+  
+    <!-- HOME SECTION -->
+    <div id="homeSection" class="content-section">
+      <h1 class="home-heading">Inspire Change, Empower Others</h1>
+      <p class="home-subheading">
+        Join Volunteen and make a lasting impact on your community.
+      </p>
+
+      <!-- Logo image below the heading -->
+      <div style="text-align:center; margin: 20px 0;">
+        <img 
+          src="images/volunteen-logo.png" 
+          alt="Volunteen Logo" 
+          style="width: 200px; max-width:80%; border-radius: 5px;"
+        />
+      </div>
+
+      <!-- Features Title -->
+      <h2 class="features-title">Our Features</h2>
+
+      <!-- Container for feature boxes -->
+      <div class="features-container">
+        <!-- Existing feature boxes -->
+        <div class="feature-box" onclick="showChat()" style="cursor:pointer;">
+          <h3>🤖 Chat Bot</h3>
+          <p>Get immediate help and answers from our AI-powered chatbot.</p>
+        </div>
+        <div class="feature-box" onclick="showImpact()" style="cursor:pointer;">
+          <h3>🔢 Impact Calculator</h3>
+          <p>Measure your volunteering impact and see the difference you make.</p>
+        </div>
+        <div class="feature-box" onclick="showVolunteer()" style="cursor:pointer;">
+          <h3>🤝 Volunteer</h3>
+          <p>Discover local volunteer opportunities and join community events.</p>
+        </div>
+        <div class="feature-box" onclick="showOrganize()" style="cursor:pointer;">
+          <h3>📢 Organize</h3>
+          <p>Create and manage your own volunteering events.</p>
+        </div>
+        <div class="feature-box" onclick="showCommunity()" style="cursor:pointer;">
+          <h3>🌐 Community</h3>
+          <p>Share your experiences and interact with fellow volunteers.</p>
+        </div>
+
+        <!-- New feature boxes -->
+        <div class="feature-box" onclick="showFundraising()" style="cursor:pointer;">
+          <h3>💰 Fundraising</h3>
+          <p>Create and manage fundraising campaigns to support your cause.</p>
+        </div>
+        <div class="feature-box" onclick="showLeaderboard()" style="cursor:pointer;">
+          <h3>🏆 Leaderboard</h3>
+          <p>See top volunteers and compete for community recognition.</p>
+        </div>
+        <div class="feature-box" onclick="showChallenges()" style="cursor:pointer;">
+          <h3>🔥 Challenges</h3>
+          <p>Engage with monthly volunteering challenges and earn rewards.</p>
+        </div>
+
+        <div class="feature-box" onclick="showRecommendations()" style="cursor:pointer;">
+          <h3>✨ For You</h3>
+          <p>Personalized event recommendations curated just for you.</p>
+        </div>
+        
+      </div>
+
+    <!-- VOLUNWORD SECTION: A Wordle-like game for volunteering words -->
+    <div id="volunwordSection" class="content-section" style="color:#fff;">
+      <h1>Volunword</h1>
+      <p>Guess today’s volunteering word (5 letters)!</p>
+      
+      <!-- The game grid (6 rows x 5 columns) -->
+      <div id="voluntwordGrid" class="wordle-grid">
+        <!-- Grid cells will be created dynamically with JavaScript -->
+      </div>
+      
+      <!-- Status message area -->
+      <div id="voluntwordStatus" class="wordle-status"></div>
+      
+      <!-- Reset/Reveal button for demo purposes -->
+      <button id="revealWordBtn" class="submit" style="margin-top:15px;">Reveal Today's Word</button>
+    </div>
+
+    <!-- VOLUNTEER TRIVIA QUIZ SECTION -->
+    <div id="volunteerTriviaQuizSection" class="content-section" style="color:#fff; margin-top: 40px;">
+      <h2>Volunteer Impact Trivia Quiz</h2>
+
+      <!-- Streak display for trivia quiz -->
+      <div id="triviaStreakDisplay" style="font-size:1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 5px;">
+        <span id="streakIcon" style="font-size:1.5rem;">🔥</span>
+        <span id="streakCount">0</span> Correct in a Row
+      </div>
+
+      <!-- Container for trivia questions -->
+      <div id="triviaQuizContainer"></div>
+
+      <!-- Navigation buttons to move through trivia questions -->
+      <div id="triviaNavButtons" style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <button id="prevTriviaBtn" class="submit" disabled>Previous</button>
+        <button id="nextTriviaBtn" class="submit">Next</button>
+      </div>
+    </div>
+
+    <!-- WHY VOLUNTEER SECTION -->
+    <div id="whyVolunteerSection" class="content-section" style="color: #fff; margin-top: 40px;">
+      <h1>Why Volunteer?</h1>
+      
+      <!-- List of volunteering benefits -->
+      <h2>1. Benefits of Volunteering</h2>
+      <ul>
+        <li><strong>Skill Development:</strong> Gain experience in leadership, teamwork, communication, and problem-solving.</li>
+        <li><strong>Networking:</strong> Build valuable connections with professionals and other volunteers.</li>
+        <li><strong>Personal Fulfillment:</strong> Make a meaningful impact in your community and feel a sense of accomplishment.</li>
+        <li><strong>Resume & College Applications:</strong> Strengthen your applications by showcasing commitment to service.</li>
+        <li><strong>Mental & Physical Well-being:</strong> Studies show that helping others can reduce stress and improve happiness.</li>
+      </ul>
+      
+      <!-- Further sections describing personal growth and career boost through volunteering -->
+      <h2>2. Personal Growth</h2>
+      <p>
+        Volunteering helps you step out of your comfort zone and develop new perspectives. Whether it's leading a team, working with diverse groups, or managing an event, you’ll build confidence and valuable experience.
+      </p>
+      
+      <h2>3. Career Boost</h2>
+      <p>
+        Many employers and colleges value volunteer experience. It demonstrates initiative, responsibility, and a willingness to contribute beyond yourself. Some industries, such as healthcare and social work, even require volunteer experience for entry-level positions.
+      </p>
+      
+      <!-- List of volunteering types -->
+      <h2>Types of Volunteering</h2>
+      <ul>
+        <li><strong>Community Service:</strong>
+          <ul>
+            <li>Food banks</li>
+            <li>Homeless shelters</li>
+            <li>Community clean-up projects</li>
+            <li>Soup kitchens</li>
+          </ul>
+        </li>
+        <li><strong>Education & Mentoring:</strong>
+          <ul>
+            <li>Tutoring students in various subjects</li>
+            <li>Reading programs at libraries or schools</li>
+            <li>Mentorship programs for younger students</li>
+          </ul>
+        </li>
+        <li><strong>Environmental Volunteering:</strong>
+          <ul>
+            <li>Tree planting initiatives</li>
+            <li>Recycling awareness campaigns</li>
+            <li>Beach or park clean-ups</li>
+          </ul>
+        </li>
+        <li><strong>Animal Welfare:</strong>
+          <ul>
+            <li>Volunteering at animal shelters</li>
+            <li>Assisting in rescue operations</li>
+            <li>Fostering pets</li>
+          </ul>
+        </li>
+        <li><strong>Healthcare Volunteering:</strong>
+          <ul>
+            <li>Assisting at hospitals or clinics</li>
+            <li>Mental health awareness programs</li>
+            <li>Senior citizen companionship programs</li>
+          </ul>
+        </li>
+        <li><strong>Event-Based Volunteering:</strong>
+          <ul>
+            <li>Charity runs and walks</li>
+            <li>Nonprofit fundraising events</li>
+            <li>Festival and community events</li>
+          </ul>
+        </li>
+      </ul>
+      
+      <!-- How to get started with volunteering -->
+      <h2>How to Get Started</h2>
+      <ol>
+        <li>
+          <strong>Finding the Right Opportunity:</strong>
+          Use online platforms like Volunteen and local nonprofit websites. Consider your skills, availability, and passion before committing. Attend volunteering fairs or community events to explore opportunities.
+        </li>
+        <li>
+          <strong>Understanding Time Commitment:</strong>
+          <ul>
+            <li>Short-term: One-time events, seasonal projects.</li>
+            <li>Long-term: Weekly or monthly commitments, leadership roles.</li>
+            <li>Remote Volunteering: Virtual mentoring, content writing, fundraising.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Volunteering Etiquette:</strong>
+          Be punctual and reliable, communicate proactively with organizers, follow guidelines, respect fellow volunteers, and take initiative.
+        </li>
+        <li>
+          <strong>Age & Eligibility Requirements:</strong>
+          Some organizations have age restrictions (e.g., hospitals may require volunteers to be 16+). Remote opportunities may have fewer restrictions. Check for parental consent requirements if under 18.
+        </li>
+      </ol>
+    </div>
+
+    <!-- VIDEO SECTION -->
+    <div id="volunteerVideoSection" class="content-section" style="color: #fff; margin-top: 40px; text-align: center;">
+      <h2>Volunteering to help others can be wonderful way of giving and loving others</h2>
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+        <!-- Embedded YouTube video explaining the importance of volunteering -->
+        <iframe 
+          src="https://www.youtube.com/embed/flyiGMNGQyA" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen 
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CHAT SECTION -->
+  <div id="chatSection" class="content-section hidden" style="color:#fff;">
+    <h1>Chat with our Bot</h1>
+    <div class="chat-container">
+      <div id="chatMessages" class="chat-messages"></div>
+      <div class="chat-input-container">
+        <textarea
+          id="chatInput"
+          placeholder="Type your message here..."
+          onkeydown="checkEnter(event)"
+        ></textarea>
+        <button onclick="sendChatMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="impactContainer"></div>
+  <div id="profileContainer"></div>
+  <div id="volunteerContainer"></div>
+  <div id="organizeContainer"></div>
+
+  <!-- COMMUNITY SECTION -->
+  <div id="communitySection" class="content-section hidden" style="color:#fff;">
+    <h1>Community Board</h1>
+    <p>Share your volunteering experiences and interact with others.</p>
+
+    <!-- Post Submission Form for Community Posts -->
+    <div class="post-form-container" style="margin-top:20px;">
+      <form id="createPostForm">
+        <textarea
+          id="postContent"
+          placeholder="Share your experience..."
+          rows="4"
+          required
+          style="
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            resize: vertical;
+            margin-bottom: 10px;
+          "
+        ></textarea>
+        <!-- Hidden file input for images and videos -->
+        <input 
+          type="file" 
+          id="postMedia" 
+          accept="image/*,video/*"
+          style="display: none;"
+        />
+        <!-- Custom file input label -->
+        <label for="postMedia" class="custom-file-label">
+          Choose File
+        </label>
+        <!-- Span to display the file name -->
+        <span id="fileName" class="file-name"></span>
+        <!-- Post button -->
+        <button type="submit" class="submit post-submit-btn">Post</button>
+      </form>
+    </div>
+
+    <!-- Container for displaying community posts -->
+    <div id="communityPostsContainer" style="margin-top:30px;">
+    </div>
+  </div>
+
+  <div id="myPlanContainer"></div>
+  <div id="authenticationContainer"></div>
+  <div id="eventContainer"></div>
+
+  <!-- DELETE CONFIRMATION MODAL -->
+  <div id="deleteConfirmationModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeDeleteConfirmationModal()">&times;</span>
+      <h2>Confirm Deletion</h2>
+      <p>Are you sure you want to delete this post? This action cannot be undone.</p>
+      <button class="delete-confirm-btn" onclick="confirmDeletePost()">Yes, Delete</button>
+      <button class="delete-cancel-btn" onclick="closeDeleteConfirmationModal()">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Main JavaScript files for functionality -->
+  <script src="js/htmlParts.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/googleSignIn.js"></script>
+  <script src="js/exampleEvent.js"></script>
+  <script src="js/volunteerOpportunities.js"></script>
+  <script src="js/postNewEvent.js"></script>
+  <script src="js/joinEvent.js"></script>
+  <script src="js/authentication.js"></script>
+  <script src="js/profile.js"></script>
+  <script src="js/password.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/myPlans.js"></script>
+  <script src="js/editEvent.js"></script>
+  <script src="js/deleteEvent.js"></script>
+  <script src="js/clickKey.js"></script>
+  <script src="js/geolocation.js"></script>
+  <script src="js/impact.js"></script>
+  <script src="js/community.js"></script>
+  <script src="js/fundraising.js"></script>
+  <script src="js/googleCalender.js"></script>
+  <script src="js/leaderBoard.js"></script>
+  <script src="js/challange.js"></script>
+  <script src="js/voluntword.js"></script>
+  <script src="js/triviaQuiz.js"></script>
+  <script src="js/recommendation.js"></script>
+  <script src="js/userProfile.js"></script>
+</body>
+</html>

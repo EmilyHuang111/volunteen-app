@@ -1,0 +1,156 @@
+<!-- EVENT DETAILS MODAL -->
+<div id="eventModal" class="modal hidden">
+  <div class="modal-content">
+      <!-- Close Button to close the Event Details Modal -->
+      <span class="close-btn" onclick="closeEventModal()">&times;</span>
+      
+      <!-- Event Name -->
+      <h2 id="detailEventName"></h2>
+      
+      <!-- Event Details -->
+      <p><strong>Organization:</strong> <span id="detailEventOrg"></span></p>
+      <p><strong>Location:</strong> <span id="detailEventLocation"></span></p>
+      <p><strong>Date:</strong> <span id="detailEventDate"></span></p>
+      <p><strong>Time:</strong> <span id="detailEventTime"></span></p>
+      <p><strong>Spots Left:</strong> <span id="detailEventSpots"></span></p>
+      <p><strong>Organizer Name:</strong> <span id="detailEventOrganizerName"></span></p>
+      <p><strong>Organizer Email:</strong> <span id="detailEventOrganizerEmail"></span></p>
+      <p><strong>Organizer Phone:</strong> <span id="detailEventOrganizerPhone"></span></p>
+      <p><strong>Instructions for Students:</strong> <span id="detailEventInstructions"></span></p>
+      <p><strong>Minimum Age:</strong> <span id="detailMinAge"></span></p>        
+      
+      <!-- Event Flyer -->
+      <p><strong>Flyer:</strong></p>
+      <!-- Image element to display event flyer, initially hidden until the image source is set -->
+      <img 
+          id="detailEventFlyer" 
+          src="" 
+          alt="Event Flyer" 
+          style="max-width: 100%; height: auto; border-radius: 5px; display: none;"
+      />
+      
+      <!-- Horizontal separator -->
+      <hr/>
+      
+      <!-- Event Description -->
+      <p id="detailEventDescription">...</p>
+  </div>
+</div>
+
+<!-- PARTICIPANTS MODAL -->
+<div id="participantsModal" class="modal hidden">
+  <div class="modal-content">
+      <!-- Close Button to close the Participants Modal -->
+      <span class="close-btn" onclick="closeParticipantsModal()">&times;</span>
+      
+      <!-- Title for Participants Modal -->
+      <h2>Participants</h2>
+      
+      <!-- List of Participants -->
+      <div id="participantsList"></div>
+  </div>
+</div>
+
+<!-- JOIN EVENT CONFIRMATION MODAL -->
+<div id="joinEventModal" class="modal hidden">
+  <div class="modal-content">
+      <!-- Close Button to close the Join Event Confirmation Modal -->
+      <span class="close-btn" onclick="closeJoinEventModal()">&times;</span>
+      
+      <!-- Title and Confirmation Message -->
+      <h2>Confirm Join Event</h2>
+      <p>Are you sure you want to join this event?</p>
+      
+      <!-- Confirmation Button -->
+      <button class="submit" onclick="confirmJoinEvent()">Confirm</button>
+  </div>
+</div>
+
+<!-- EDIT EVENT MODAL -->
+<div id="editEventModal" class="modal hidden">
+  <div class="modal-content">
+      <!-- Close Button to close the Edit Event Modal -->
+      <span class="close-btn" onclick="closeEditEventModal()">&times;</span>
+      
+      <!-- Edit Event Header -->
+      <h2>Edit Event</h2>
+      
+      <!-- Form for Editing Event Details -->
+      <form id="editEventForm">
+          <!-- Event Name Input Field -->
+          <label>Event Name:</label>
+          <input type="text" id="editEventName" class="org-input" required/>
+          
+          <!-- Organization Input Field -->
+          <label>Organization:</label>
+          <input type="text" id="editEventOrg" class="org-input" required/>
+          
+          <!-- Event Description Input Field -->
+          <label>Description:</label>
+          <textarea id="editEventDesc" class="org-input" rows="3" required></textarea>
+          
+          <!-- Event Location Input Field -->
+          <label>Location:</label>
+          <input type="text" id="editEventLocation" class="org-input" required/>
+          
+          <!-- Event Date Input Field -->
+          <label>Date:</label>
+          <input type="date" id="editEventDate" class="org-input" required/>
+          
+          <!-- Event Time Input Field -->
+          <label>Time:</label>
+          <input 
+              type="text" 
+              id="editEventTime" 
+              class="org-input" 
+              placeholder="e.g. 9AM - 12PM" 
+              required
+          />
+          
+          <!-- Event Type Dropdown (Environment, Education, etc.) -->
+          <label>Type:</label>
+          <select id="editEventType" class="org-input" required>
+              <option value="Environment">Environment</option>
+              <option value="Education">Education</option>
+              <option value="Health">Health</option>
+              <option value="Community">Community</option>
+              <option value="Animal Welfare">Animal Welfare</option>
+              <option value="Arts">Arts</option>
+              <option value="Sports">Sports</option>
+          </select>
+          
+          <!-- Spots Left Input Field -->
+          <label>Spots Left:</label>
+          <input type="number" id="editEventSpots" class="org-input" required/>
+          
+          <!-- Organizer Name Input Field -->
+          <label>Organizer Name:</label>
+          <input type="text" id="editEventOrganizerName" class="org-input" required/>
+          
+          <!-- Organizer Email Input Field -->
+          <label>Organizer Email:</label>
+          <input type="email" id="editEventOrganizerEmail" class="org-input" required/>
+          
+          <!-- Organizer Phone Input Field -->
+          <label>Organizer Phone:</label>
+          <input type="tel" id="editEventOrganizerPhone" class="org-input" required/>
+          
+          <!-- Instructions for Students Input Field -->
+          <label>Instructions for Students:</label>
+          <textarea id="editEventInstructions" class="org-input" rows="3"></textarea>
+          
+          <!-- Minimum Age Input Field -->
+          <label>Minimum Age:</label>
+          <input type="number" id="editMinAge" class="org-input" required/>
+          
+          <!-- Flyer Upload (Optional) -->
+          <label>Flyer (Optional):</label>
+          <input type="file" id="editEventFlyer" class="org-input" accept="image/*"/>
+          
+          <!-- Save Changes Button -->
+          <button type="submit" class="submit" style="margin-top:15px;">
+            Save Changes
+          </button>
+      </form>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+<!-- PROFILE SECTION -->
+<div id="profileSection" class="content-section hidden" style="color:#fff;">
+  <!-- Profile Section Title -->
+  <h1>Your Profile</h1>
+  <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:30px;">
+  
+      <!-- Profile Image Section -->
+      <div style="flex:0 0 200px; text-align:center;">
+
+          <!-- Current Profile Image -->
+          <img
+            id="profilePhoto"
+            src="images/default-profile.png"
+            alt="Profile Photo"
+            style="
+              width:150px; 
+              height:150px; 
+              object-fit:cover; 
+              border-radius:50%; 
+              background:#ccc;
+            "
+          />
+          
+          <!-- Choose Photo File Input -->
+          <div class="file-upload">
+            <!-- Custom styled file input for profile photo -->
+            <label for="profilePhotoInput" class="custom-file-label">Choose Photo</label>
+            <input 
+              type="file" 
+              id="profilePhotoInput" 
+              accept="image/*"
+            />
+          </div>
+        
+          <!-- Save Photo Button -->
+          <button id="savePhotoBtn" class="submit" style="margin-top:10px;" onclick="saveProfilePhoto()">
+            Save Photo
+          </button>
+
+          <!-- Awards Section -->
+          <div style="margin-top:30px;"></div>
+          <h3>Awards</h3>
+          <p>
+            <strong></strong> 
+            <!-- Medal Emoji for display -->
+            <span id="medalEmoji" style="font-size: 5rem;"></span>
+          </p>
+          <p>
+            <strong></strong> 
+            <!-- Medal Text for display -->
+            <span id="medalText" style="font-size: 3rem;"></span>
+          </p>
+      </div>
+
+      <!-- Profile Info Section -->
+      <div style="flex:1;">
+          <!-- Displaying User Information -->
+          <p><strong>Email:</strong> <span id="profileEmail">N/A</span></p>
+          <p><strong>Name:</strong> <span id="profileName">N/A</span></p>
+          <p><strong>Total Volunteer Hours:</strong> <span id="profileVolunteerHours">0</span> hours</p>
+          <p><strong>Login Streak:</strong> <span id="profileStreak">0</span> days</p>
+
+          <!-- Profile Description and Organization Section -->
+          <div style="margin:15px 0;">
+            <label><strong>Description:</strong></label><br/>
+            <!-- Description Textarea for user input -->
+            <textarea 
+              id="profileDescription" 
+              rows="3" 
+              style="
+                width:100%;
+                border:none;
+                background: rgba(255,255,255,0.2);
+                margin-bottom:10px;
+                color:white;
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                padding: 8px;
+              "
+            ></textarea>
+
+            <label><strong>Organization:</strong></label><br/>
+            <!-- Organization input field for user input -->
+            <input 
+              type="text" 
+              id="profileOrg" 
+              style="
+                width:100%;
+                border:none;
+                background: rgba(255,255,255,0.2);
+                margin-bottom:10px;
+                color:white;
+                border-radius: 10px;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                padding: 8px;
+              "
+            />
+          </div>
+
+          <!-- Add/Remove Volunteer Hours Section -->
+          <div style="margin-top:20px;">
+            <h3>Add/Remove Volunteer Hours</h3>
+            <!-- Input field to add/remove volunteer hours -->
+            <input 
+              type="number" 
+              step="0.1" 
+              id="profileAddHoursInput" 
+              placeholder="Enter hours to add/remove" 
+              required 
+              style="padding:10px; width: 200px; border-radius:5px; border: none; margin-right:10px; margin-bottom:20px;"
+            />
+            <!-- Button to add hours -->
+            <button type="button" class="submit" style="margin-bottom:15px; background-color: #4CAF50;" onclick="handleAddHours()">
+              Add Hours
+            </button>
+            <!-- Button to remove hours -->
+            <button type="button" class="submit remove-hours-btn" onclick="removeVolunteerHours()" style="background-color: #ff6666;">
+              Remove Hours
+            </button>
+          </div>
+
+          <!-- Save Profile Button -->
+          <button 
+            class="submit" 
+            style="margin-top:15px;" 
+            onclick="updateUserProfile()"
+          >
+            Save Profile
+          </button>
+      </div>
+
+  </div>
+</div>

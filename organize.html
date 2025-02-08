@@ -1,0 +1,107 @@
+      <!-- ORGANIZE SECTION -->
+      <div id="organizeSection" class="content-section hidden" style="color:#fff;">
+        <h1>Organize an Event</h1>
+        <p style="font-size:0.9rem;">Create a new volunteering event below</p>
+  
+        <label>Event Name:</label>
+        <input type="text" id="orgEventName" class="org-input"/>
+  
+        <label>Organization:</label>
+        <input type="text" id="orgEventOrg" class="org-input"/>
+  
+        <label>Description:</label>
+        <textarea id="orgEventDesc" class="org-input" rows="3"></textarea>
+  
+        <label>Location:</label>
+        <input 
+            type="text" 
+            id="orgEventLocation" 
+            class="org-input"
+            placeholder="Event Address"
+            />
+  
+        <label>Date:</label>
+        <input type="date" id="orgEventDate" class="org-input"/>
+  
+        <label>Time:</label>
+        <input 
+          type="text" 
+          id="orgEventTime" 
+          class="org-input" 
+          placeholder="e.g. 9AM - 12PM"
+        />
+  
+        <label>Type:</label>
+        <select id="orgEventType" class="org-input">
+          <option value="Environment">Environment</option>
+          <option value="Education">Education</option>
+          <option value="Health">Health</option>
+          <option value="Community">Community</option>
+          <option value="Animal Welfare">Animal Welfare</option>
+          <option value="Arts">Arts</option>
+          <option value="Sports">Sports</option>
+        </select>
+  
+        <label>Spots Left:</label>
+        <input 
+          type="number" 
+          id="orgEventSpots" 
+          class="org-input" 
+          placeholder="e.g. 10"
+        />
+  
+        <label>Your Name:</label>
+        <input 
+          type="text" 
+          id="orgEventOrganizerName" 
+          class="org-input" 
+          placeholder="Organizer's Full Name"
+        />
+  
+        <label>Your Email:</label>
+        <input 
+          type="email" 
+          id="orgEventOrganizerEmail" 
+          class="org-input" 
+          placeholder="Organizer's Email"
+        />
+  
+        <label>Your Phone:</label>
+        <input 
+          type="tel" 
+          id="orgEventOrganizerPhone" 
+          class="org-input" 
+          placeholder="Organizer's Phone Number"
+        />
+  
+        <label>Instructions for Students:</label>
+        <textarea 
+          id="orgEventInstructions" 
+          class="org-input" 
+          rows="3" 
+          placeholder="Any special instructions..."
+        ></textarea>
+  
+        <label>Minimum Age:</label>
+        <input 
+          type="number" 
+          id="orgMinAge" 
+          class="org-input" 
+          placeholder="e.g. 10"
+        />
+  
+        <label>Flyer (Optional):</label>
+        <div class="file-upload">
+          <label for="orgEventFlyer" class="custom-flyer-label">Choose Photo</label>
+          <input 
+            type="file" 
+            id="orgEventFlyer" 
+            accept="image/*"
+          />
+        </div>
+      
+        <button class="submit" style="margin-top:15px;" onclick="postNewEvent()">
+          Post Event
+        </button>
+      </div>
+  

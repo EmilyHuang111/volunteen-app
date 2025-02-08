@@ -1,0 +1,204 @@
+    <!-- My Plans Section -->
+    <div id="myPlansSection" class="content-section hidden" style="color:#fff;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>My Plans</h1>
+        <!-- New Sync Button -->
+        <button id="syncCalendarBtn" onclick="syncToGoogleCalendar()" class="submit" style="background: #4285F4; color: #fff; padding: 8px 16px; border-radius: 20px; border: none;">
+          Sync to Google Calendar
+        </button>
+      </div>
+      <p>Here are the volunteering events you have organized and joined:</p>
+      <!-- Organized Events -->
+      <div>
+        <h2>Organized Events</h2>
+        <div id="organizedEventsContainer" style="margin-top:20px; display:flex; flex-direction:column; gap:20px;"></div>
+      </div>
+      <!-- Joined Events -->
+      <div style="margin-top:40px;">
+        <h2>Joined Events</h2>
+        <div id="joinedEventsContainer" style="margin-top:20px; display:flex; flex-direction:column; gap:20px;"></div>
+      </div>
+    </div>
+    
+    <!-- FUNDRAISING SECTION -->
+    <div id="fundraisingSection" class="content-section hidden" style="color:#fff;">
+      <h1>Fundraising Campaign Creator</h1>
+      <p>
+        Let our AI help you craft a compelling campaign for your cause. Describe your cause, goals, and any details below:
+      </p>
+      <textarea id="fundraisingInput" rows="4" placeholder="Describe your cause, target audience, and goals..."></textarea>
+      <br/>
+      <button class="submit" onclick="generateFundraisingCampaign()">Generate Campaign</button>
+      <div id="fundraisingOutput" style="margin-top:20px;"></div>
+      <h2>Checklist for a Successful Campaign</h2>
+      <ul id="campaignChecklist">
+        <li>Define a clear campaign goal</li>
+        <li>Create an engaging story about your cause</li>
+        <li>Set a realistic donation target</li>
+        <li>Plan outreach via social media, email, and community events</li>
+        <li>Monitor progress and thank your donors</li>
+      </ul>
+    </div>
+  
+    <!-- Leaderboard Section -->
+  <div id="leaderboardSection" class="content-section hidden" style="color:#fff;">
+    <h1>Top Volunteers</h1>
+    <div class="leaderboard-container" id="leaderboardContainer"></div>
+  </div>
+  <!-- CHALLENGES SECTION -->
+  <div id="challengesSection" class="content-section hidden" style="color:#fff;">
+    <h1>These are the challenges for the month!</h1>
+    <div class="challenges-header">
+      <!-- The generate button has been removed -->
+    </div>
+    <div id="challengesContainer" class="challenges-grid"></div>
+  </div>
+  
+  
+  <!-- Personalized Recommendations Section -->
+  <div id="recommendationsSection" class="content-section hidden" style="color:#fff;">
+    <h1>Recommended Events for You</h1>
+    <div id="recommendationsContainer">
+      <!-- Personalized recommendations will appear here -->
+    </div>
+  </div>
+  
+<!-- ABOUT US SECTION -->
+<div id="aboutUsSection" class="content-section hidden" style="color:#fff;">
+    <h1>About Us</h1>
+    <div class="profile-container">
+      <!-- Katie's Profile -->
+      <div class="profile-box">
+        <!-- 
+          Replace this src with the actual image path for Katie 
+          e.g., images/katie-profile.jpg 
+        -->
+        <img src="images/katie-photo.jpg" alt="Katie's Photo" class="profile-pic" />
+        
+        <h2 style="margin-top: 10px;">Katie</h2>
+        <p>
+          Kaitlyn is an 11th grade student at American Heritage Broward. She enjoys 
+          reading historical fiction novels, playing volleyball, and writing poetry. 
+          A big part of her life is volunteering whether it's tutoring her peers or 
+          going to the local food bank to help out. Volunteen is another one of the 
+          ways she's giving back to her community.
+        </p>
+      </div>
+      
+  
+      <!-- Emily's Profile -->
+      <div class="profile-box">
+        <!-- 
+          Replace this src with the actual image path for Emily
+          e.g., images/emily-profile.jpg
+        -->
+        <img src="images/emily-photo.jpg" alt="Emily's Photo" class="profile-pic" />
+        
+        <h2 style="margin-top: 10px;">Emily</h2>
+        <p>
+          Emily Huang is an 11th grade student at American Heritage Broward. When she 
+          has free time she likes playing tennis and working on her robot. Along with 
+          playing tennis, she also enjoys volunteering in teaching younger children 
+          and at bigger events like the Miami Open. She loves being able to volunteer 
+          with the things she's passionate about and wishes to share this with others 
+          with the development of Volunteen.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- OUR MISSION SECTION -->
+  <div id="missionSection" class="content-section hidden" style="color:#fff;">
+    <h1>Our Mission</h1>
+    <p>
+      Our mission is to provide a platform for teenagers in which they can find 
+      volunteering opportunities that they enjoy. We want to make volunteering fun 
+      for our users in hopes it encourages them to do their part to make the world 
+      a better place.
+    </p>
+  </div>
+  
+  
+
+<!-- NEWS SECTION -->
+<div id="newsSection" class="content-section hidden" style="color:#fff;">
+    <h1>Volunteering News</h1>
+    <p>Check out the latest volunteering headlines:</p>
+    
+    <ul class="news-links">
+      <li>
+        <a 
+          href="https://communitynewspapers.com/pinecrest-tribune/feeding-south-florida-to-host-annual-outrun-hunger-5k-miami/"
+          style="color:#fff;"
+          target="_blank"
+          rel="noopener noreferrer">
+          Feeding South Florida to Host Annual Outrun Hunger 5K (Miami)
+        </a>
+      </li>
+      <li>
+        <a 
+          href="https://www.wptv.com/news/region-c-palm-beach-county/west-palm-beach/south-floridian-volunteers-in-california-helping-wildfire-victims"
+          style="color:#fff;"
+          target="_blank"
+          rel="noopener noreferrer">
+          South Floridian Volunteers in California Helping Wildfire Victims
+        </a>
+      </li>
+      <li>
+        <a 
+          href="https://www.grandforksherald.com/sports/college/special-olympics-volunteering-core-part-of-und-forward-brian-mathews"
+          style="color:#fff;"
+          target="_blank"
+          rel="noopener noreferrer">
+          Special Olympics Volunteering: UND Forward Brian Mathews
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.postregister.com/news/local/high-school-volunteer-at-champ-s-heart-wins-philanthropy-awards/article_48f8016a-ddc5-11ef-8af2-db5d5c531d23.html"
+          style="color:#fff;"
+          target="_blank"
+          rel="noopener noreferrer">
+          High School Volunteer at Champ’s Heart Wins Philanthropy Awards
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://elmoreautauganews.com/2024/10/01/american-heritage-girls-volunteer-in-honor-of-non-profits-birthday/"
+          style="color:#fff;"
+          target="_blank"
+          rel="noopener noreferrer">
+          American Heritage Girls Volunteer in Honor of Non-Profit’s Birthday
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.fiestabowl.org/news/2024/11/18/volunteer-features-volunteer-spotlight-judy-ferreira-native-american-heritage-month.aspx"
+          style="color:#fff;"
+          target="_blank"
+          rel="noopener noreferrer">
+          Volunteer Spotlight: Judy Ferreira for Native American Heritage Month
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.citybiz.co/article/621964/american-heritage-schools-broward-campus-will-host-a-thanksgiving-food-drive-to-benefit-feeding-south-florida/"
+          style="color:#fff;"
+          target="_blank"
+          rel="noopener noreferrer">
+          American Heritage Schools (Broward) Host Thanksgiving Food Drive
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://cbs12.com/news/morning-show/hometown-heroes-local-high-school-students-helping-senior-citizens-with-their-tech-needs-watermark-west-palm-beach-techease-technology-florida-february-20-2024"
+          style="color:#fff;"
+          target="_blank"
+          rel="noopener noreferrer">
+          Local HS Students Helping Senior Citizens With Tech Needs
+        </a>
+      </li>
+    </ul>
+  </div>
+  
