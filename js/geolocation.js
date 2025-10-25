@@ -171,3 +171,4 @@ async function geocodeAddress(address) {
     return null; // Return null if there is an error
   }
 }
+

@@ -59,3 +59,4 @@ function signUpWithGoogle() {
   // Google Sign-Up is essentially the same as Sign-In
   signInWithGoogle();
 }
+

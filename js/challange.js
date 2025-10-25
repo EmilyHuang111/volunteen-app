@@ -119,3 +119,4 @@ function displayChallenges(challenges) {
     </div>
   `).join(''); // Map through the challenges and generate HTML for each
 }
+

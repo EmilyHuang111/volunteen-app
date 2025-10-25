@@ -88,3 +88,4 @@ Format your answer in clear sections using Markdown.
       "An error occurred while generating the campaign."; // Show an error message in the UI.
   }
 }
+

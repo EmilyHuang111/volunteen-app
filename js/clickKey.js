@@ -61,3 +61,4 @@ function closeDeleteConfirmationModal() {
       modal.classList.add('hidden'); // Hide the delete confirmation modal
   }
 }
+

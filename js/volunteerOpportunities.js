@@ -174,3 +174,4 @@ function checkVolunteerSearchEnter(e) {
 function applyVolFilter() {
   renderVolunteerOpportunities(); // Re-render the volunteer opportunities based on the filters.
 }
+

@@ -60,3 +60,4 @@ function removeFromDashboard(eventKey) {
   
   alert("Event removed from your dashboard.");  // Alert the user that the event was removed from the dashboard
 }
+

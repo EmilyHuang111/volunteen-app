@@ -245,3 +245,4 @@ function getCell(row, col) {
 function showStatus(message) {
   document.getElementById('voluntwordStatus').innerHTML = `<p>${message}</p>`;
 }
+

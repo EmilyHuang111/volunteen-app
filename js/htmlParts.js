@@ -25,4 +25,5 @@ function loadPartial(url, targetId) {
     loadPartial('event.html', 'eventContainer');
     loadPartial('footer.html', 'footerContainer');
   });
+
   

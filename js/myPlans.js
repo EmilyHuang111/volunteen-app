@@ -382,3 +382,4 @@ function updateCompletedEventsCount(userId, monthKey, increment) {
 const countRef = database.ref(`users/${userId}/completedEvents/${monthKey}`);
 countRef.transaction(current => (current || 0) + increment);
 }
+

@@ -173,3 +173,4 @@ function saveProfilePhoto() {
   fileInput.value = ""; // Reset the file input
   fileLabel.textContent = 'Choose Photo'; // Reset the label text
 }
+

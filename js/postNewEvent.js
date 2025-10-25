@@ -131,3 +131,4 @@ function clearOrganizeForm() {
   document.getElementById('orgMinAge').value = "";
   document.getElementById('orgEventFlyer').value = ""; // Clear the flyer input
 }
+

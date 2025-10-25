@@ -151,3 +151,4 @@ function showNews() {
   // Optionally, if you have a News nav link, add an active class to that link
   // document.querySelector('#newsNav').classList.add('active');
 }
+

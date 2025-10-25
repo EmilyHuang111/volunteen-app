@@ -159,3 +159,4 @@ function logout() {
       alert(error.message); // Display error message
     });
 }
+

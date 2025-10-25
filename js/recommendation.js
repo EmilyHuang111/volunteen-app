@@ -289,3 +289,4 @@ function updateVolunteerStreak(userId) {
     console.error("Error updating volunteer streak:", err); // Log error if updating the streak fails.
   });
 }
+

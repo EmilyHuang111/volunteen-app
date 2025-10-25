@@ -82,3 +82,4 @@ function populateExampleEvents() {
       joinedEventsContainer.innerHTML = "<p>Error loading your joined events.</p>";  // Show error message
   });
 }
+
